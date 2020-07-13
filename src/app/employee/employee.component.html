@@ -1,0 +1,105 @@
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<style>
+    td{
+        padding: 10px;
+    }
+</style>
+<p>employee works!</p>
+<div style='display: flex;'>
+    <div style='display: inline;'>
+         <form align="center" >
+             <table align="center">
+                 <tr>
+                     <td>
+                         Employee id:
+                     </td>
+                     <td>
+                         <input type='text' [(ngModel)]="employee.eid" name="eid" class="form-controls" />
+                     </td>
+                    </tr><tr>
+                     <td>
+                        Employee Name:
+                    </td>
+                    <td>
+                        <input type='text' [(ngModel)]="employee.ename" name="ename" class="form-controls" />
+                    </td>
+                </tr><tr>
+                    <td>
+                        Employee Designation:
+                    </td>
+                    <td>
+                        <input type='text' [(ngModel)]="employee.desig" name="desig" class="form-controls" />
+                    </td>
+                </tr><tr>
+                    <td>
+                        Employee Joining Date:
+                    </td>
+                    
+                    <td>
+                        <input type='date' [(ngModel)]="employee.joiningDate" name="joiningDate" class="form-controls" />
+                    </td>
+                </tr><tr>
+                    <td>
+                        Employee salary:
+                    </td>
+                    <td>
+                        <input type='text' [(ngModel)]="employee.salary" name="salary" class="form-controls" />
+                    </td>
+                 </tr>
+             </table>
+             <br />
+            <input type='submit'  (click)="AddEmployee()"  class='form-controls' value="Submit" />
+
+         </form>
+    </div>
+
+    <div style='display: inline;padding-left:10%;'>
+    <table class="table table-bordered">
+        <tr>
+            <th>
+                Employee Id:
+            </th>
+            <th>
+                Employee Name:
+            </th>
+            <th>
+                Employee Designation:
+            </th>
+            <th>
+                Employee Joining Date:
+            </th>
+            <th>
+                Employee salary:
+            </th>
+             
+        </tr>
+        <tr *ngFor="let item of employees">
+            <td>
+               {{item.eid}}
+            </td>
+            <td>
+                {{item.ename}}
+            </td>
+            <td>
+                {{item.desig}}
+            </td>
+            <td>
+                {{item.joiningDate}}
+            </td>
+            <td>
+                {{item.salary}}
+            </td>
+             
+        </tr>
+        
+    </table>
+
+    
+    </div>
+</div>
